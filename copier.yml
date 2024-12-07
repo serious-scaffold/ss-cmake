@@ -1,0 +1,21 @@
+# This is where the parent template lives
+_subdirectory: template
+
+# Separate settings for the parent template to not collide with the child template
+_templates_suffix: .j2
+
+_envops:
+  block_end_string: '%]]'
+  block_start_string: '[[%'
+  comment_end_string: '#]]'
+  comment_start_string: '[[#'
+  keep_trailing_newline: true
+  variable_end_string: ']]]'
+  variable_start_string: '[[['
+
+_answers_file: ss-cmake.copier-answers.yml
+
+_skip_if_exists:
+  - '*'
+  - '!ss-cmake.copier-answers.yml'
+  - '!ss-cmake.copier.yml'

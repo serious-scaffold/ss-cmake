@@ -1,0 +1,42 @@
+cmake_minimum_required(VERSION 3.25)
+message(STATUS "CMAKE VERSION:${CMAKE_VERSION}")
+
+project(
+  {{ ss_cmake_repo_name }}
+  LANGUAGES CXX C
+  HOMEPAGE_URL "https://{{ ss_cmake_repo_url }}"
+  DESCRIPTION "{{ ss_cmake_project_description }}")
+
+set(CMAKE_CXX_STANDARD
+    20
+    CACHE STRING "C++ standard")
+set(CMAKE_CXX_STANDARD_REQUIRED
+    ON
+    CACHE BOOL "C++ standard required")
+set(CMAKE_CXX_EXTENSIONS
+    OFF
+    CACHE BOOL "C++ extensions")
+
+# Project default module
+find_package(cmake-modules REQUIRED)
+include(cmake-modules/ProjectDefault)
+
+# Project custom modules
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+[%- if ss_cmake_configure_warnings_and_hardening == true %]
+include(ConfigureWarningsAndHardening)
+[%- endif %]
+[%- if ss_cmake_configure_version == true %]
+include(ConfigureVersion)
+[%- endif %]
+[%- if ss_cmake_configure_coverage == true %]
+include(ConfigureCoverage)
+[%- endif %]
+[%- if ss_cmake_use_cpm == true %]
+include(ConfigureCPMDependencies)
+[%- endif %]
+[%- if ss_cmake_use_cpm == true %]
+include(ConfigureConanDependencies)
+[%- endif %]
+
+add_subdirectory(src)
