@@ -13,9 +13,9 @@ _envops:
   variable_end_string: ']]]'
   variable_start_string: '[[['
 
-_answers_file: ss-cmake.copier-answers.yml
+_answers_file: .copier-answers.ss-cmake.yml
 
 _skip_if_exists:
   - '*'
-  - '!ss-cmake.copier-answers.yml'
-  - '!ss-cmake.copier.yml'
+  - '!.copier-answers.ss-cmake.yml'
+  - '!copier.ss-cmake.yml'
