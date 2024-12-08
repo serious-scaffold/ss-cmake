@@ -15,7 +15,8 @@ _envops:
 
 _answers_file: .copier-answers.ss-cmake.yml
 
+# Skip files which are most possible to custom.
 _skip_if_exists:
-  - '*'
-  - '!.copier-answers.ss-cmake.yml'
-  - '!copier.ss-cmake.yml'
+  - vcpkg.json.jinja
+  - CMakeLists.txt.jinja
+  - CMakePresets.json
