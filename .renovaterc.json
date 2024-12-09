@@ -8,7 +8,7 @@
   "automergeType": "pr",
   "automergeStrategy": "merge-commit",
   "ignoreScripts": false,
-  "platformAutomerge": true,
+  "platformAutomerge": false,
   "packageRules": [
     {
       "automerge": true,
@@ -25,16 +25,6 @@
         "pin",
         "digest"
       ]
-    },
-    {
-      "matchDepTypes": [
-        "vcpkg-baseline"
-      ],
-      "postUpgradeTasks": {
-        "commands": [
-          "find template -type f -name 'vcpkg.json.jinja' -exec sed -i 's|{{{currentDigest}}}|{{{newDigest}}}|g' {} +"
-        ]
-      }
     },
     {
       "description": "Group renovate docker tag and pre-commit-hooks tag",
@@ -77,7 +67,7 @@
       "depNameTemplate": "https://github.com/microsoft/vcpkg",
       "depTypeTemplate": "vcpkg-baseline",
       "fileMatch": [
-        "^vcpkg\\.json$"
+        "^template/vcpkg\\.json\\.jinja$"
       ],
       "matchStrings": [
         "\"builtin-baseline\": \"(?<currentDigest>.*?)\""
@@ -90,7 +80,7 @@
       "datasourceTemplate": "git-refs",
       "depTypeTemplate": "vcpkg-baseline",
       "fileMatch": [
-        "^vcpkg\\.json$"
+        "^template/vcpkg\\.json\\.jinja$"
       ],
       "matchStrings": [
         "\"baseline\": \"(?<currentDigest>.*?)\"[^}]+?\"repository\": \"(?<depName>.*?)\""
