@@ -5,7 +5,7 @@
 The shared serious scaffold template to integrate cmake system.
 
 [![License](https://img.shields.io/github/license/serious-scaffold/ss-cmake)](https://github.com/serious-scaffold/ss-cmake/blob/master/LICENSE)
-[![SS Badge](https://img.shields.io/badge/Serious%20Scaffold-cmake-blue)](https://github.com/serious-scaffold/ss-cmake)
+[![SS Badge](https://img.shields.io/badge/Serious%20Scaffold-meta-blue)](https://github.com/serious-scaffold/ss-cmake)
 
 [![CI](https://github.com/serious-scaffold/ss-cmake/actions/workflows/ci.yml/badge.svg)](https://github.com/serious-scaffold/ss-cmake/actions/workflows/ci.yml)
 [![Renovate](https://github.com/serious-scaffold/ss-cmake/actions/workflows/renovate.yml/badge.svg)](https://github.com/serious-scaffold/ss-cmake/actions/workflows/renovate.yml)
