@@ -20,4 +20,3 @@ _skip_if_exists:
   - vcpkg.json.jinja
   - CMakeLists.txt.jinja
   - CMakePresets.json
-  - '*ConfigureWarningsAndHardening.cmake*'
